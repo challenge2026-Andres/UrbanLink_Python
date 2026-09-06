@@ -135,7 +135,6 @@ def excluir_pontos(pontos, historico, historico_excluidos):
         print("---------------------------------------------------")
     return pontos, historico, historico_excluidos
 
-
 def converter_bilhetes(pontos, historico):
     print("------------------------------------")
     print("\nFazendo o cálculo da conversão...")
@@ -146,7 +145,6 @@ def converter_bilhetes(pontos, historico):
     print("------------------------------------")
     historico = registrar_historico(historico, "Conversão em bilhetes", f"{bilhetes} bilhetes")
     return bilhetes, historico
-
 
 def consultar_historico(historico, historico_adicionados, historico_atualizados, historico_excluidos):
     print("\nBuscando o histórico...")
@@ -185,7 +183,6 @@ def consultar_historico(historico, historico_adicionados, historico_atualizados,
 
 def menu_gerenciar_pontos(pontos, historico, historico_adicionados, historico_atualizados, historico_excluidos):
     opcao = exibir_menu("SUBMENU | GERENCIAR PONTOS", SUBMENU_PONTOS)
-
     while opcao != "0":
         match opcao:
             case "1":
@@ -207,7 +204,6 @@ def menu_gerenciar_pontos(pontos, historico, historico_adicionados, historico_at
         opcao = exibir_menu("SUBMENU | GERENCIAR PONTOS", SUBMENU_PONTOS)
 
     return pontos, historico, historico_adicionados, historico_atualizados, historico_excluidos
-
 
 def main():
     pontos = 0
@@ -240,7 +236,6 @@ def main():
 
     print("\nSaindo do sistema...")
     time.sleep(2)
-
 
 if __name__ == "__main__":
     main()
