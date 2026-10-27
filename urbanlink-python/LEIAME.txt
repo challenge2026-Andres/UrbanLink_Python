@@ -1,0 +1,32 @@
+URBANLINK - SPRINT 4 (Computational Thinking Using Python)
+Integrantes: <NOME - RM>, <NOME - RM>, <NOME - RM>
+Vídeo (YouTube, até 5 min): <COLE O LINK AQUI>
+
+1. COMO EXECUTAR
+   pip install -r requirements.txt
+   Defina as variáveis de ambiente do banco Oracle (o mesmo usado pela API Java):
+     DB_USER, DB_PASSWORD  (obrigatórias)
+     DB_HOST (padrão oracle.fiap.com.br), DB_PORT (1521), DB_SID (ORCL)
+   python challenge.py
+
+2. REQUISITOS DA SPRINT 4 -> ONDE ESTÃO NO CÓDIGO
+   - Menus e submenus: main(), menu_usuarios(), menu_pontos(), menu_consultas(), menu_exportar()
+   - CRUD (Oracle): Create cadastrar_usuario | Read listar_usuarios/buscar_usuario/consultas |
+     Update alterar_usuario, atualizar_pontos | Delete excluir_usuario, excluir_pontos
+   - Exportação JSON: exportar_json() -> pasta exportacoes/
+   - API pública: api_externa.py (Open-Meteo, sem chave) - previsão do tempo da viagem e sugestão de deslocamento
+   - Relevância: os dados ficam no mesmo banco da API Java/front-end, então refletem no sistema web.
+
+3. EXPLICAÇÃO DO CÓDIGO (para o vídeo)
+   - Funções: cada ação do menu é uma função (ex.: adicionar_pontos); banco.py concentra o SQL; api_externa.py a API.
+   - Laços: while nos menus e nas validações de entrada; for para listar registros e calcular estatísticas.
+   - Estruturas de dados: dict (usuário, sessão, linhas do banco), list (histórico, valores), tuple (opções de menu).
+   - Arquivos: json.dump grava exportacoes/<nome>_<data-hora>.json com "with open" (fecha o arquivo sozinho).
+   - Tratamento de erros: try/except/else/finally; ErroBanco (ORA-xxxxx traduzidos) e ErroApi
+     (timeout, sem internet, HTTP, JSON inválido); executar() captura e mostra mensagem amigável.
+   - Banco: oracledb com binds (:nome) contra SQL injection; conectar() faz commit, rollback e close;
+     retirar_pontos usa UPDATE atômico (WHERE saldo_pontos >= :qtd).
+   - API: requests.get com timeout de 10s; o resultado vira dict e é usado em sugerir_deslocamento().
+
+4. USO DE IA
+   <Declarar aqui, se houver, quais partes foram feitas com auxílio de IA e mostrar no vídeo o prompt usado.>

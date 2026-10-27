@@ -1,0 +1,9 @@
+ROTEIRO (máx. 5 min)
+0:00 Apresentação do grupo e do desafio (pontos -> transporte público)
+0:30 Estrutura: challenge.py, banco.py, api_externa.py
+1:00 Demonstrar CRUD: cadastrar, listar, alterar, excluir usuário (e mostrar no banco/front)
+2:15 Pontos: adicionar, atualizar, excluir, converter em bilhetes
+3:00 Exportar JSON e abrir o arquivo gerado
+3:30 API externa: previsão do tempo de uma cidade
+4:00 Código: funções, laços, estruturas de dados, arquivos, erros (try/except), banco e API
+4:40 Declarar uso de IA (se houver) e encerrar
